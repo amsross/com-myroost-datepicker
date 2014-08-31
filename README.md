@@ -77,7 +77,7 @@ Include the javascript assets:
 
 1. Install global dependencies
 
-		npm install -g grunt-cli bower
+		npm install -g grunt-cli
 
 2. Install project dependencies
 
