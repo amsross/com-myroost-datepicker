@@ -4,7 +4,7 @@ com-myroost-datepicker [![Built with Grunt](https://cdn.gruntjs.com/builtwith.pn
 ## Insertion on page
 
 Include the form on the page:
-	```
+
 	<form role="form" class="row form-datepicker" action="https://reservations.millenniumhotels.com/ibe/index.aspx" method="GET">
 		<div class="form-group">
 			<div class="col-xs-12 col-sm-6">
@@ -64,38 +64,32 @@ Include the form on the page:
 			</div>
 		</div>
 	</form>
-	```
 
 Include the style assets:
-	```
+
 	<link rel="stylesheet" href="assets/css/main.min.css" ></link>
-	```
 
 Include the javascript assets:
-	```
+
 	<script src="assets/js/scripts.min.js" ></script>
-	```
 
 ## Development Workflow
 
 1. Install global dependencies
-	```
-	npm install -g grunt-cli bower
-	```
+
+		npm install -g grunt-cli bower
 
 2. Install project dependencies
-	```
-	npm install
+
+		npm install
 
 3. Do work...
-	```
-	vi <filename>
-	git add <filenames>
-	git commit
-	git push origin master
-	```
+
+		vi <filename>
+		git add <filenames>
+		git commit
+		git push origin master
 
 4. Final build (optional)
-	```
-	grunt build
-	```
+
+		grunt build
