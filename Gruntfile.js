@@ -116,7 +116,7 @@ module.exports = function(grunt) {
 		'uglify:dev',
 		'watch'
 	]);
-	grunt.registerTask('dist', [
+	grunt.registerTask('build', [
 		'clean',
 		'less:dist',
 		'uglify:dist'
