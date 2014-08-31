@@ -1,0 +1,42 @@
+
+@import "../bower_components/bootstrap-datepicker/build/build3.less";
+
+@grid-gutter-width:         30px;
+@padding-base-horizontal:   12px;
+@padding-base-vertical:     6px;
+
+.form-datepicker {
+	margin-bottom: (@grid-gutter-width / 2);
+	margin-top: (@grid-gutter-width / 2);
+	.form-group {
+		> div {
+			padding: (@grid-gutter-width / 6) (@grid-gutter-width / 4);
+			input,
+			select,
+			.input-group-addon {
+				background-color: transparent;
+				border-radius: 0;
+				border: 0;
+				text-transform: lowercase;
+			}
+			input[type="text"],
+			select,
+			.input-group-addon {
+				border-bottom: 1px solid @input-border;
+				box-shadow: none;
+				padding: @padding-base-vertical (@padding-base-horizontal / 2);
+				text-align: left;
+			}
+			input[type="submit"] {
+				background-color: #405766;
+				color: #fff;
+			}
+			i {
+				color: #405766;
+			}
+		}
+	}
+}
+.datepicker {
+	border-radius: 0;
+}
