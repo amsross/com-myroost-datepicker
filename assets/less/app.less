@@ -4,6 +4,12 @@
 @grid-gutter-width:         30px;
 @padding-base-horizontal:   12px;
 @padding-base-vertical:     6px;
+@screen-md:                 992px;
+@screen-md-min:              @screen-md;
+@screen-sm:                 768px;
+@screen-sm-min:              @screen-sm;
+@screen-sm-max:             (@screen-md-min - 1);
+@screen-xs-max:             (@screen-sm-min - 1);
 
 .form-datepicker {
 	margin-bottom: (@grid-gutter-width / 2);
@@ -39,4 +45,15 @@
 }
 .datepicker {
 	border-radius: 0;
+	@media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+		min-width: 220px;
+		width: 97.5%;
+	}
+	@media (max-width: @screen-xs-max) {
+		min-width: 220px;
+		width: 95%;
+	}
+	table {
+		width: 100%;
+	}
 }
