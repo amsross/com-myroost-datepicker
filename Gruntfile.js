@@ -77,10 +77,10 @@ module.exports = function(grunt) {
 				tasks: ['jshint', 'uglify:dev']
 			},
 			all: {
-				// Browser live reloading
-				// https://github.com/gruntjs/grunt-contrib-watch#live-reloading
 				options: {
-					livereload: true
+					livereload: {
+						port: 4002
+					},
 				},
 				files: [
 					'assets/css/main.min.css',
