@@ -15,7 +15,7 @@
 				format: 'D mm.dd.yy',
 				startDate: '+1d',
 			})
-			.on('changeDate clearDate', function(){
+			.on('changeDate clearDate', function() {
 				var checkinDate,
 					diffDays,
 					timeDiff,
@@ -60,6 +60,10 @@
 				$('.form-datepicker #nights').val(diffDays||1);
 			})
 			;
+
+		$('#arrival').data('datepicker').o.orientation.x = 'left';
+		$('#departure').data('datepicker').o.orientation.x = 'right';
+
 		$('.form-datepicker ul.adults li a.selectable').on('click', function(evt) {
 			var $target = $(evt.currentTarget);
 
