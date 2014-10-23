@@ -11,6 +11,7 @@
 
 		$('.form-datepicker .input-daterange')
 			.datepicker({
+				autoclose: true,
 				clearBtn: true,
 				format: 'D mm.dd.yy',
 				startDate: '+1d',
@@ -61,34 +62,46 @@
 			})
 			;
 
-		$('#arrival').data('datepicker').o.orientation.x = 'left';
-		$('#departure').data('datepicker').o.orientation.x = 'right';
+		$('.form-datepicker .input-group-addon').on('click', function(evt) {
+			$(evt.currentTarget)
+				.siblings('input')
+				.datepicker('show')
+				;
+		});
 
 		$('.form-datepicker ul.adults li a.selectable').on('click', function(evt) {
 			var $target = $(evt.currentTarget);
 
+			// unmark any selected options
 			$target
 				.parents('ul')
 				.find('.selected')
 				.removeClass('selected')
 				;
 
+			// select this option
 			$target
 				.addClass('selected')
 				;
 
+			// update the dropdown button text
 			$('.form-datepicker #adults').val($target.text().trim());
+			$('#form-datepicker-adults span.lbl').text($target.text().trim() + ' Adult' + (+$target.text().trim() > 1 ? 's' : ''));
 		});
+
 		$('.form-datepicker ul.adults li.footer a').on('click', function(evt) {
 			var $target = $(evt.currentTarget);
 
+			// unmark any selected options
 			$target
 				.parents('ul')
 				.find('.selected')
 				.removeClass('selected')
 				;
 
+			// update the dropdown button text
 			$('.form-datepicker #adults').val('');
+			$('#form-datepicker-adults span.lbl').text('Adults');
 			evt.preventDefault();
 		});
 	});
