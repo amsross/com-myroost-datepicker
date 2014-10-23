@@ -29,19 +29,26 @@
 				background-color: #fff;
 				border-radius: 0;
 				border: 0;
-				text-transform: uppercase;
-			}
-			.btn,
-			.input-group-addon,
-			input[type="text"],
-			select {
 				box-shadow: none;
 				color: #999;
 				font-size: 0.75em;
-				font-weight: bold;
 				letter-spacing: 2px;
 				padding: @padding-base-vertical (@padding-base-horizontal / 2);
 				text-align: left;
+				text-transform: uppercase;
+			}
+			.input-group-addon {
+				cursor: pointer;
+				text-align: right;
+			}
+			input[type="submit"] {
+				background-color: #D25B42;
+				color: #fff;
+				font-size: 0.8em;
+				text-align: center;
+			}
+			i {
+				color: #777;
 			}
 			.dropdown,
 			.dropup {
@@ -159,14 +166,6 @@
 					}
 				}
 			}
-			input[type="submit"] {
-				background-color: #D25B42;
-				color: #fff;
-				font-size: 0.8em;
-			}
-			i {
-				color: #777;
-			}
 		}
 	}
 }
@@ -225,13 +224,13 @@
 			}
 		}
 	}
-	@media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
-		min-width: 275px;
-	}
-	@media (max-width: @screen-xs-max) {
-		min-width: 220px;
-		width: 80%;
-	}
+	// @media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+	// 	min-width: 275px;
+	// }
+	// @media (max-width: @screen-xs-max) {
+	// 	min-width: 220px;
+	// 	width: 80%;
+	// }
 	table {
 		width: 100%;
 	}
