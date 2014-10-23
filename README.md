@@ -6,61 +6,49 @@ com-myroost-datepicker [![Built with Grunt](https://cdn.gruntjs.com/builtwith.pn
 Include the form on the page:
 
 	<form role="form" class="row form-datepicker" action="https://reservations.millenniumhotels.com/ibe/index.aspx" method="GET">
-		<div class="form-group">
+		<div class="form-group clearfix">
 			<div class="col-xs-12 col-sm-6">
 				<div class="col-xs-12 input-daterange input-group">
-					<div class="col-xs-12 input-group date check_in">
-						<input type="text" class="form-control" id="check_in" name="check_in" value="" placeholder="Check In" required />
+					<div class="col-xs-12 input-group date">
+						<input type="text" class="form-control" id="arrival" name="start" value="" placeholder="Arrival" required />
 						<span class="input-group-addon">
 							<i class="glyphicon glyphicon-calendar"></i>
 						</span>
 					</div>
 					<span class="input-group-addon invisible">&ndash;</span>
-					<div class="col-xs-12 input-group date check_out">
-						<input type="text" class="form-control" id="check_out" name="check_out" value="" placeholder="Check Out" required />
+					<div class="col-xs-12 input-group date">
+						<input type="text" class="form-control" id="departure" name="end" value="" placeholder="Departure" required />
 						<span class="input-group-addon">
 							<i class="glyphicon glyphicon-calendar"></i>
 						</span>
 					</div>
 				</div>
 			</div>
-			<div class="col-xs-6 col-sm-2">
-				<select class="form-control" id="adults" name="adults" required>
-					<option value="1" selected>Adult</option>
-					<option value="1">1 Adult</option>
-					<option value="2">2 Adults</option>
-					<option value="3">3 Adults</option>
-					<option value="4">4 Adults</option>
-					<option value="5">5 Adults</option>
-					<option value="6">6 Adults</option>
-					<option value="7">7 Adults</option>
-					<option value="8">8 Adults</option>
-					<option value="9">9 Adults</option>
-				</select>
+			<div class="col-xs-12 col-sm-3">
+				<div class="dropup">
+					<button class="form-control btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+						<span>Adults</span>
+						<span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu adults" role="menu" aria-labelledby="dropdownMenu1">
+						<li class="header"><a># of Adults</a></li>
+						<li><a href="javascript:;" class="selectable selected"><span>1</span></a></li>
+						<li><a href="javascript:;" class="selectable"><span>2</span></a></li>
+						<li><a href="javascript:;" class="selectable"><span>3</span></a></li>
+						<li><a href="javascript:;" class="selectable"><span>4</span></a></li>
+						<li class="footer"><a>Clear</a></li>
+					</ul>
+				</div>
 			</div>
-			<div class="col-xs-6 col-sm-2">
-				<select class="form-control" id="child" name="child"required>
-					<option value="0" selected>Child</option>
-					<option value="0">0 Children</option>
-					<option value="1">1 Child</option>
-					<option value="2">2 Children</option>
-					<option value="3">3 Children</option>
-					<option value="4">4 Children</option>
-					<option value="5">5 Children</option>
-					<option value="6">6 Children</option>
-					<option value="7">7 Children</option>
-					<option value="8">8 Children</option>
-					<option value="9">9 Children</option>
-				</select>
-			</div>
-			<div class="col-xs-12 col-sm-2">
+			<div class="col-xs-12 col-sm-3">
+				<input class="form-control" id="adults" name="adults" value="1" type="hidden" />
 				<input class="form-control" id="checkin" name="checkin" value="" type="hidden" />
-				<input class="form-control" id="nights" name="nights" value="1" type="hidden" />
 				<input class="form-control" id="hotelid" name="hotelid" value="13641" type="hidden" />
 				<input class="form-control" id="langid" name="langid" value="1" type="hidden" />
+				<input class="form-control" id="nights" name="nights" value="1" type="hidden" />
 				<input class="form-control" id="rooms" name="rooms" value="1" type="hidden" />
 
-				<input class="form-control" id="submit" name="submit" value="Submit" type="Submit" />
+				<input class="form-control" id="submit" name="submit" value="Availability" type="Submit" />
 			</div>
 		</div>
 	</form>
