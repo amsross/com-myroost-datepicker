@@ -39,7 +39,6 @@
 				font-weight: bold;
 				padding: @padding-base-vertical (@padding-base-horizontal / 2);
 				text-align: left;
-
 			}
 			input[type="submit"] {
 				background-color: #D25B42;
@@ -53,15 +52,21 @@
 	}
 }
 .datepicker {
+	background-color: fade(#fff, 92.5%);
 	border-radius: 0;
 	padding: 0;
 	table {
 		thead {
+			background-color: fade(#fff, 100%);
 			tr {
 				th {
 					border-radius: 0;
 					font-weight: normal;
 					font-size: 0.85em;
+					&.next,
+					&.prev {
+						visibility: visible !important;
+					}
 				}
 			}
 		}
@@ -89,6 +94,7 @@
 			}
 		}
 		tfoot {
+			background-color: fade(#fff, 100%);
 			tr {
 				th {
 					border-radius: 0;
