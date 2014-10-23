@@ -3,7 +3,7 @@
 	$(document).ready(function() {
 
 		var startDate = new Date(),
-			dateStr = (startDate.getMonth()+1) + '/' + startDate.getDate() + '/' + startDate.getFullYear()
+			dateStr = (startDate.getMonth()+1) + '/' + (startDate.getDate()+1) + '/' + startDate.getFullYear()
 			;
 
 		// set a valid initial checkin date
@@ -11,37 +11,53 @@
 
 		$('.form-datepicker .input-daterange')
 			.datepicker({
-				autoclose: true,
 				clearBtn: true,
-				forceParse: true,
 				format: 'D mm.dd.yy',
-				multidate: false,
-				orientation: 'auto',
 				startDate: '+1d',
-				todayBtn: false,
-				todayHighlight: false,
 			})
-			.on('changeDate', function(evt){
-				if (!evt.date) {return false;}
-
-				var diffDays,
+			.on('changeDate clearDate', function(){
+				var checkinDate,
+					diffDays,
 					timeDiff,
 					arrival = $('#arrival').datepicker('getDate'),
 					departure = $('#departure').datepicker('getDate')
 					;
 
+				if (arrival.valueOf()) {
+					// set the checkin date to the arrival date
+					checkinDate = arrival;
+					// limit the departure to after the arrival
+					$('#departure').datepicker('setStartDate', arrival);
+				} else {
+					// set the checkin date to tomorrow's date
+					checkinDate = startDate;
+					if (departure.valueOf()) {
+						// set the checkin date to the departure date
+						checkinDate = departure;
+					}
+					// limit the departure to after the current date
+					$('#departure').datepicker('setStartDate', startDate);
+				}
+
+				if (departure.valueOf()) {
+					// limit the arrival to before the departure
+					$('#arrival').datepicker('setEndDate', departure);
+				} else {
+					// remove the limit on the arrival
+					$('#arrival').datepicker('setEndDate', false);
+				}
+
 				// set a valid checkin date for the form values
-				dateStr = (arrival.getMonth()+1) + '/' + arrival.getDate() + '/' + arrival.getFullYear();
-				$('.form-datepicker #checkin').val(dateStr);
+				$('.form-datepicker #checkin').val((checkinDate.getMonth()+1) + '/' + checkinDate.getDate() + '/' + checkinDate.getFullYear());
 
 				if (arrival && departure) {
 					if (arrival.valueOf() < departure.valueOf() || arrival.valueOf() === departure.valueOf()) {
 						timeDiff = Math.abs(departure - arrival);
 						diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
-						// set the number of nights for the stay
-						$('.form-datepicker #nights').val(diffDays||1);
 					}
 				}
+				// set the number of nights for the stay
+				$('.form-datepicker #nights').val(diffDays||1);
 			})
 			;
 	});
