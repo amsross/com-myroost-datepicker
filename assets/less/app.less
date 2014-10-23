@@ -13,6 +13,10 @@
 .form-datepicker {
 	margin-bottom: (@grid-gutter-width / 2);
 	margin-top: (@grid-gutter-width / 2);
+	:-moz-placeholder {color: #999;}
+	:-ms-input-placeholder {color: #999;}
+	::-moz-placeholder {color: #999;}
+	::-webkit-input-placeholder {color: #999;}
 	.form-group {
 		background-color: #ddd;
 		padding: 5px;
@@ -35,6 +39,7 @@
 				font-weight: bold;
 				padding: @padding-base-vertical (@padding-base-horizontal / 2);
 				text-align: left;
+
 			}
 			input[type="submit"] {
 				background-color: #D25B42;
