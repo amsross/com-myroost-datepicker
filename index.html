@@ -53,20 +53,23 @@
 							</div>
 						</div>
 						<div class="col-xs-12 col-sm-3">
-							<select class="form-control" id="adults" name="adults" required>
-								<option>Adults</option>
-								<option value="1">1</option>
-								<option value="2">2</option>
-								<option value="3">3</option>
-								<option value="4">4</option>
-								<option value="5">5</option>
-								<option value="6">6</option>
-								<option value="7">7</option>
-								<option value="8">8</option>
-								<option value="9">9</option>
-							</select>
+							<div class="dropup">
+								<button class="form-control btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+									<span>Adults</span>
+									<span class="caret"></span>
+								</button>
+								<ul class="dropdown-menu adults" role="menu" aria-labelledby="dropdownMenu1">
+									<li class="header"><a># of Adults</a></li>
+									<li><a href="javascript:;" class="selectable"><span>1</span></a></li>
+									<li><a href="javascript:;" class="selectable"><span>2</span></a></li>
+									<li><a href="javascript:;" class="selectable"><span>3</span></a></li>
+									<li><a href="javascript:;" class="selectable"><span>4</span></a></li>
+									<li class="footer"><a>Clear</a></li>
+								</ul>
+							</div>
 						</div>
 						<div class="col-xs-12 col-sm-3">
+							<input class="form-control" id="adults" name="adults" value="1" type="hidden" />
 							<input class="form-control" id="checkin" name="checkin" value="" type="hidden" />
 							<input class="form-control" id="nights" name="nights" value="1" type="hidden" />
 							<input class="form-control" id="hotelid" name="hotelid" value="13641" type="hidden" />

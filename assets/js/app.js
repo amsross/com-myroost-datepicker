@@ -60,5 +60,32 @@
 				$('.form-datepicker #nights').val(diffDays||1);
 			})
 			;
+		$('.form-datepicker ul.adults li a.selectable').on('click', function(evt) {
+			var $target = $(evt.currentTarget);
+
+			$target
+				.parents('ul')
+				.find('.selected')
+				.removeClass('selected')
+				;
+
+			$target
+				.addClass('selected')
+				;
+
+			$('.form-datepicker #adults').val($target.text().trim());
+		});
+		$('.form-datepicker ul.adults li.footer a').on('click', function(evt) {
+			var $target = $(evt.currentTarget);
+
+			$target
+				.parents('ul')
+				.find('.selected')
+				.removeClass('selected')
+				;
+
+			$('.form-datepicker #adults').val('');
+			evt.preventDefault();
+		});
 	});
 })(jQuery);
