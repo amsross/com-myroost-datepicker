@@ -24,7 +24,7 @@ Include the form on the page:
 				</div>
 			</div>
 			<div class="col-xs-12 col-sm-3">
-				<div class="dropup">
+				<div class="dropup dropdown-container">
 					<button class="form-control btn btn-default dropdown-toggle" type="button" id="form-datepicker-adults" data-toggle="dropdown">
 						<span class="lbl">Adults</span>
 						<span class="caret"></span>
