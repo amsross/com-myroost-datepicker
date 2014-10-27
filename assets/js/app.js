@@ -70,8 +70,6 @@
 		});
 
 		$('.form-datepicker .dropdown-container').on('show.bs.dropdown', function(evt) {
-			console.log(evt);
-
 			var $window = $(window),
 				$target = $(evt.currentTarget),
 				calendarHeight = $target.outerHeight(),
