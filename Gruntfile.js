@@ -74,7 +74,7 @@ module.exports = function(grunt) {
 				files: [
 					'<%= jshint.all %>'
 				],
-				tasks: ['jshint', 'uglify:dev']
+				tasks: ['uglify:dev']
 			},
 			all: {
 				options: {
@@ -119,6 +119,7 @@ module.exports = function(grunt) {
 	grunt.registerTask('build', [
 		'clean',
 		'less:dist',
+		'jshint',
 		'uglify:dist'
 	]);
 
