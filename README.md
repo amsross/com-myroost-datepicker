@@ -53,10 +53,9 @@ Include the form on the page:
 	</form>
 
 Copy files from `/assets/` to root (`/`)
-
-	* assets/css/main.min.css -> /css/main.min.css
-	* assets/images/* -> /images/
-	* assets/js/scripts.min.js -> /js/scripts.min.js
+* `assets/css/main.min.css -> /css/main.min.css`
+* `assets/images/* -> /images/`
+* `assets/js/scripts.min.js -> /js/scripts.min.js`
 
 Include the style assets:
 
