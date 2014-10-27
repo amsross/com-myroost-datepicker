@@ -9,7 +9,7 @@ Include the form on the page:
 		<div class="form-group clearfix input-daterange">
 			<div class="col-xs-12 col-sm-3">
 				<div class="col-xs-12 input-group date">
-					<input type="text" class="form-control" id="arrival" name="start" value="" placeholder="Arrival" autocomplete="off" required />
+					<input type="text" class="form-control" id="arrival" name="start" value="" placeholder="Arrival" autocomplete="off" required readonly="true" />
 					<span class="input-group-addon">
 						<i class="glyphicon glyphicon-calendar"></i>
 					</span>
@@ -17,7 +17,7 @@ Include the form on the page:
 			</div>
 			<div class="col-xs-12 col-sm-3">
 				<div class="col-xs-12 input-group date">
-					<input type="text" class="form-control" id="departure" name="end" value="" placeholder="Departure" autocomplete="off" required />
+					<input type="text" class="form-control" id="departure" name="end" value="" placeholder="Departure" autocomplete="off" required readonly="true" />
 					<span class="input-group-addon">
 						<i class="glyphicon glyphicon-calendar"></i>
 					</span>
