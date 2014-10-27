@@ -3,7 +3,7 @@
 	$(document).ready(function() {
 
 		var startDate = new Date(),
-			dateStr = (startDate.getMonth()+1) + '/' + (startDate.getDate()+1) + '/' + startDate.getFullYear()
+			dateStr = (startDate.getUTCMonth()+1) + '/' + (startDate.getUTCDate()+1) + '/' + startDate.getUTCFullYear()
 			;
 
 		// set a valid initial checkin date
@@ -19,7 +19,7 @@
 			.on('changeDate clearDate', function() {
 				var checkinDate,
 					diffDays,
-					timeDiff,
+					diffTime,
 					arrival = $('#arrival').datepicker('getDate'),
 					departure = $('#departure').datepicker('getDate')
 					;
@@ -49,12 +49,12 @@
 				}
 
 				// set a valid checkin date for the form values
-				$('.form-datepicker #checkin').val((checkinDate.getMonth()+1) + '/' + checkinDate.getDate() + '/' + checkinDate.getFullYear());
+				$('.form-datepicker #checkin').val((checkinDate.getUTCMonth()+1) + '/' + checkinDate.getUTCDate() + '/' + checkinDate.getUTCFullYear());
 
 				if (arrival && departure) {
 					if (arrival.valueOf() < departure.valueOf() || arrival.valueOf() === departure.valueOf()) {
-						timeDiff = Math.abs(departure - arrival);
-						diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
+						diffTime = departure.getTime() - arrival.getTime();
+						diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
 					}
 				}
 				// set the number of nights for the stay
