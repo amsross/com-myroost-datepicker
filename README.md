@@ -47,7 +47,7 @@ Include the form on the page:
 				<input class="form-control" id="nights" name="nights" value="1" type="hidden" />
 				<input class="form-control" id="rooms" name="rooms" value="1" type="hidden" />
 
-				<input class="form-control" id="submit" name="submit" value="Availability" type="Submit" />
+				<button class="form-control btn" id="submit" value="Availability" type="Submit" >Availability</button>
 			</div>
 		</div>
 	</form>
