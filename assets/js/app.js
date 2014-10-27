@@ -72,19 +72,17 @@
 		$('.form-datepicker .dropdown-container').on('show.bs.dropdown', function(evt) {
 			var $window = $(window),
 				$target = $(evt.currentTarget),
-				calendarHeight = $target.outerHeight(),
 				windowHeight = $window.height(),
 				scrollTop = $window.scrollTop(),
 				offset = $target.parent().offset(),
-				height = $target.outerHeight(true),
 				yorient = 'down',
 				top_overflow, bottom_overflow
 				;
 
 			$target.removeClass('dropup dropdown');
 
-			top_overflow = -scrollTop + offset.top - calendarHeight;
-			bottom_overflow = scrollTop + windowHeight - (offset.top + height + calendarHeight);
+			top_overflow = -scrollTop + offset.top;
+			bottom_overflow = scrollTop + windowHeight - offset.top;
 			if (Math.max(top_overflow, bottom_overflow) === bottom_overflow) {
 				yorient = 'down';
 			} else {
