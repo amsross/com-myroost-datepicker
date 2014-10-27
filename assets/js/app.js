@@ -69,6 +69,33 @@
 				;
 		});
 
+		$('.form-datepicker .dropdown-container').on('show.bs.dropdown', function(evt) {
+			console.log(evt);
+
+			var $window = $(window),
+				$target = $(evt.currentTarget),
+				calendarHeight = $target.outerHeight(),
+				windowHeight = $window.height(),
+				scrollTop = $window.scrollTop(),
+				offset = $target.parent().offset(),
+				height = $target.outerHeight(true),
+				yorient = 'down',
+				top_overflow, bottom_overflow
+				;
+
+			$target.removeClass('dropup dropdown');
+
+			top_overflow = -scrollTop + offset.top - calendarHeight;
+			bottom_overflow = scrollTop + windowHeight - (offset.top + height + calendarHeight);
+			if (Math.max(top_overflow, bottom_overflow) === bottom_overflow) {
+				yorient = 'down';
+			} else {
+				yorient = 'up';
+			}
+
+			$target.addClass('drop' + yorient);
+		});
+
 		$('.form-datepicker ul.adults li a.selectable').on('click', function(evt) {
 			var $target = $(evt.currentTarget);
 
