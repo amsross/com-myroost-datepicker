@@ -52,13 +52,19 @@ Include the form on the page:
 		</div>
 	</form>
 
+Copy files from `/assets/` to root (`/`)
+
+	* assets/css/main.min.css -> /css/main.min.css
+	* assets/images/* -> /images/
+	* assets/js/scripts.min.js -> /js/scripts.min.js
+
 Include the style assets:
 
-	<link rel="stylesheet" href="assets/css/main.min.css" ></link>
+	<link rel="stylesheet" href="/css/main.min.css" ></link>
 
 Include the javascript assets:
 
-	<script src="assets/js/scripts.min.js" ></script>
+	<script src="/js/scripts.min.js" ></script>
 
 ## Development Workflow
 
