@@ -5,7 +5,7 @@ com-myroost-datepicker [![Built with Grunt](https://cdn.gruntjs.com/builtwith.pn
 
 Include the form on the page:
 
-	<form role="form" class="row form-datepicker" action="https://reservations.millenniumhotels.com/ibe/index.aspx" method="GET">
+	<form role="form" class="form-datepicker" action="https://reservations.millenniumhotels.com/ibe/index.aspx" method="GET">
 		<div class="form-group clearfix input-daterange">
 			<div class="col-xs-12 col-sm-3">
 				<div class="col-xs-12 input-group date">
