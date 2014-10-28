@@ -14,6 +14,10 @@
 				autoclose: true,
 				clearBtn: true,
 				format: 'D mm.dd.yy',
+				inputs: [
+					$('#arrival'),
+					$('#departure'),
+				],
 				startDate: '+1d',
 			})
 			.on('changeDate clearDate', function() {
@@ -64,7 +68,7 @@
 
 		$('.form-datepicker .input-group-addon').on('click', function(evt) {
 			$(evt.currentTarget)
-				.siblings('input')
+				.siblings('input#arrival, input#departure')
 				.datepicker('show')
 				;
 		});
