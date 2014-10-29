@@ -75,6 +75,10 @@
 					}
 				}
 				ul {
+					-webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+					border-left: 0;
+					box-shadow: 0 6px 12px rgba(0,0,0,.175);
+					font-size: 12px;
 					&:before {
 						border-bottom-color: rgba(0, 0, 0, 0.2);
 						border-bottom: 7px solid #ccc;
@@ -114,6 +118,7 @@
 								cursor: pointer;
 								font-size: 0.75em;
 								font-weight: normal;
+								margin-left: 0;
 								padding: 5px;
 								text-transform: uppercase;
 							}
@@ -150,6 +155,7 @@
 			.dropup {
 				&.open {
 					ul {
+						margin-bottom: -7px !important;
 						&:before {
 							border-bottom: 0;
 							border-top: 7px solid #999;
@@ -179,18 +185,25 @@
 	}
 }
 .datepicker {
+	-webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+	-webkit-transition: none;
 	background-color: fade(#fff, 90%);
 	border-radius: 0;
+	border-left: 0;
+	box-shadow: 0 6px 12px rgba(0,0,0,.175);
+	font-size: 1em;
+	opacity: 1;
 	padding-bottom: 0;
 	padding-top: 0;
+	transition: none;
 	table {
 		thead {
 			background-color: fade(#fff, 100%);
 			tr {
 				th {
 					border-radius: 0;
-					font-weight: normal;
 					font-size: 0.85em;
+					font-weight: normal;
 					&.next,
 					&.prev {
 						visibility: visible !important;
