@@ -96,6 +96,42 @@
 			$target.addClass('drop' + yorient);
 		});
 
+		$('.form-datepicker ul.hotelid li.footer a').on('click', function(evt) {
+			var $target = $(evt.currentTarget);
+
+			// unmark any selected options
+			$target
+				.parents('ul')
+				.find('.selected')
+				.removeClass('selected')
+				;
+
+			// update the dropdown button text
+			$('.form-datepicker #hotelid').val('');
+			$('#form-datepicker-hotelid span.lbl').text('Location');
+			evt.preventDefault();
+		});
+
+		$('.form-datepicker ul.hotelid li a.selectable').on('click', function(evt) {
+			var $target = $(evt.currentTarget);
+
+			// unmark any selected options
+			$target
+				.parents('ul')
+				.find('.selected')
+				.removeClass('selected')
+				;
+
+			// select this option
+			$target
+				.addClass('selected')
+				;
+
+			// update the dropdown button text
+			$('.form-datepicker #hotelid').val($target.attr('value'));
+			$('#form-datepicker-hotelid span.lbl').text($target.text().split('–').pop().trim());
+		});
+
 		$('.form-datepicker ul.adults li a.selectable').on('click', function(evt) {
 			var $target = $(evt.currentTarget);
 

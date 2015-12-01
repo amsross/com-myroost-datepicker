@@ -32,46 +32,66 @@
 	</section>
 	<section class="container">
 		<section class="row">
-			<div class="col-md-8 col-md-offset-2">
+			<div class="col-md-10 col-md-offset-1">
 				<form role="form" class="form-datepicker" action="https://res.windsurfercrs.com/ibe/index.aspx" method="GET">
 					<div class="form-group clearfix input-daterange">
-						<div class="col-xs-12 col-sm-3">
-							<div class="col-xs-12 input-group date">
-								<input type="text" class="form-control" id="arrival" name="start" value="" placeholder="Arrival" autocomplete="off" required readonly="true" />
-								<span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+						<div class="col-xs-12 col-sm-5">
+							<div class="col-xs-12 col-sm-6">
+								<div class="dropup dropdown-container">
+									<button class="form-control btn btn-default dropdown-toggle" type="button" id="form-datepicker-hotelid" data-toggle="dropdown">
+										<span class="lbl">Location</span>
+										<span class="caret"></span>
+									</button>
+									<ul class="dropdown-menu hotelid" role="menu" aria-labelledby="form-datepicker-hotelid">
+										<li class="header"><a>Location</a></li>
+										<li><a href="javascript:;" value="13641" class="selectable"><span>Philadelphia &ndash; Midtown</span></a></li>
+										<li><a href="javascript:;" value="14336" class="selectable"><span>Philadelphia &ndash; Rittenhouse</span></a></li>
+										<li class="footer"><a>Clear</a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="col-xs-12 col-sm-6">
+								<div class="col-xs-12 input-group date">
+									<input type="text" class="form-control" id="arrival" name="start" value="" placeholder="Arrival" autocomplete="off" required readonly="true" />
+									<span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+								</div>
 							</div>
 						</div>
-						<div class="col-xs-12 col-sm-3">
-							<div class="col-xs-12 input-group date">
-								<input type="text" class="form-control" id="departure" name="end" value="" placeholder="Departure" autocomplete="off" required readonly="true" />
-								<span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+						<div class="col-xs-12 col-sm-5">
+							<div class="col-xs-12 col-sm-6">
+								<div class="col-xs-12 input-group date">
+									<input type="text" class="form-control" id="departure" name="end" value="" placeholder="Departure" autocomplete="off" required readonly="true" />
+									<span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+								</div>
+							</div>
+							<div class="col-xs-12 col-sm-6">
+								<div class="dropup dropdown-container">
+									<button class="form-control btn btn-default dropdown-toggle" type="button" id="form-datepicker-adults" data-toggle="dropdown">
+										<span class="lbl">Adults</span>
+										<span class="caret"></span>
+									</button>
+									<ul class="dropdown-menu adults" role="menu" aria-labelledby="form-datepicker-adults">
+										<li class="header"><a># of Adults</a></li>
+										<li><a href="javascript:;" class="selectable"><span class="circle">1</span></a></li>
+										<li><a href="javascript:;" class="selectable"><span class="circle">2</span></a></li>
+										<li><a href="javascript:;" class="selectable"><span class="circle">3</span></a></li>
+										<li><a href="javascript:;" class="selectable"><span class="circle">4</span></a></li>
+										<li class="footer"><a>Clear</a></li>
+									</ul>
+								</div>
 							</div>
 						</div>
-						<div class="col-xs-12 col-sm-3">
-							<div class="dropup dropdown-container">
-								<button class="form-control btn btn-default dropdown-toggle" type="button" id="form-datepicker-adults" data-toggle="dropdown">
-									<span class="lbl">Adults</span>
-									<span class="caret"></span>
-								</button>
-								<ul class="dropdown-menu adults" role="menu" aria-labelledby="form-datepicker-adults">
-									<li class="header"><a># of Adults</a></li>
-									<li><a href="javascript:;" class="selectable selected"><span>1</span></a></li>
-									<li><a href="javascript:;" class="selectable"><span>2</span></a></li>
-									<li><a href="javascript:;" class="selectable"><span>3</span></a></li>
-									<li><a href="javascript:;" class="selectable"><span>4</span></a></li>
-									<li class="footer"><a>Clear</a></li>
-								</ul>
-							</div>
-						</div>
-						<div class="col-xs-12 col-sm-3">
-							<input class="form-control" id="adults" name="adults" value="1" type="hidden" />
-							<input class="form-control" id="checkin" name="checkin" value="" type="hidden" />
-							<input class="form-control" id="hotelid" name="hotelid" value="13641" type="hidden" />
-							<input class="form-control" id="langid" name="langid" value="1" type="hidden" />
-							<input class="form-control" id="nights" name="nights" value="1" type="hidden" />
-							<input class="form-control" id="rooms" name="rooms" value="1" type="hidden" />
+						<div class="col-xs-12 col-sm-2">
+							<div class="col-xs-12">
+								<input class="form-control" id="adults" name="adults" value="" type="hidden" />
+								<input class="form-control" id="checkin" name="checkin" value="" type="hidden" />
+								<input class="form-control" id="hotelid" name="hotelid" value="" type="hidden" />
+								<input class="form-control" id="langid" name="langid" value="1" type="hidden" />
+								<input class="form-control" id="nights" name="nights" value="1" type="hidden" />
+								<input class="form-control" id="rooms" name="rooms" value="1" type="hidden" />
 
-							<button class="form-control btn" id="submit" value="Availability" type="Submit" >Availability</button>
+								<button class="form-control btn" id="submit" value="Availability" type="Submit" >Availability</button>
+							</div>
 						</div>
 					</div>
 				</form>

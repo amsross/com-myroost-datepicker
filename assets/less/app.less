@@ -21,8 +21,13 @@
 	.form-group {
 		background-color: #ddd;
 		padding: 5px;
+		div {
+			padding: 0;
+		}
 		> div {
-			padding: (@grid-gutter-width / 6) (@grid-gutter-width / 4);
+			> div {
+				padding: (@grid-gutter-width / 6) (@grid-gutter-width / 4);
+			}
 			.btn,
 			.input-group-addon,
 			input,
@@ -131,24 +136,32 @@
 							&.selectable {
 								&:hover {
 									span {
-										background-color: fade(#D25B42, 75%);
-										color: #fff;
+										color: #D25B42;
+										&.circle {
+											background-color: fade(#D25B42, 75%);
+											color: #fff;
+										}
 									}
 								}
 								&.selected {
 									span {
-										background-color: #D25B42;
-										color: #fff;
+										color: #D25B42;
+										&.circle {
+											background-color: #D25B42;
+											color: #fff;
+										}
 									}
 								}
 								span {
-									border-radius: 100%;
-									border: none;
 									display: table-cell;
 									height: 30px;
 									padding: 5px;
 									text-align: center;
-									width: 30px;
+									&.circle {
+										border-radius: 100%;
+										border: none;
+										width: 30px;
+									}
 								}
 							}
 						}
