@@ -9,6 +9,18 @@
 		// set a valid initial checkin date
 		$('.form-datepicker #checkin').val(dateStr);
 
+		$('.form-datepicker').on('submit', function(e) {
+			if ( $('#adults').val().length < 1 ||
+				$('#checkin').val().length < 1 ||
+				$('#hotelid').val().length < 1 ||
+				$('#langid').val().length < 1 ||
+				$('#nights').val().length < 1 ||
+				$('#rooms').val().length < 1 ) {
+				e.preventDefault();
+				return false;
+			}
+		});
+
 		$('.form-datepicker .input-daterange')
 			.datepicker({
 				autoclose: true,
